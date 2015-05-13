@@ -1,0 +1,97 @@
+.home-page {
+	.bar-stable{
+		h1.nav-text {
+			color: @thrive-orange;
+		}
+		i {
+			font-size: 1.4em;
+		}
+
+		.sprite {
+			vertical-align: middle;
+		}
+	}
+
+	.sub-header-container {
+		position: relative;
+		width: 100%;
+
+	}
+
+	.sub-header {
+		z-index: 99;
+		width: 100%;
+		padding: 5px 0;
+	}
+
+	.scroll {
+		//padding-top: 44px;
+		padding-bottom: 44px;
+	}
+
+	#delivery-address-bar {
+		width: 100%;
+		padding: 6px 0px 6px 15px;
+		background: @app-background;
+		border-top: 1px solid @app-stroke;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		i {
+			padding-right: 5px;
+		}
+
+		p {
+			margin: 0;
+			font-family: @font-family-proxima-nova-semibold;
+
+			&.delivery-title {
+				color: @thrive-orange;
+				font-size: 11px;
+				text-transform: uppercase;
+			}
+
+			&.address {
+				font-size: 14px;
+				color: @dark-text;
+				display: inline;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap
+			}
+		}
+	}
+
+  .err-card {
+    .overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background-color: rgba(0,0,0,0.6); /*dim the background*/
+    }
+
+    .err-msg {
+      position: absolute;
+      z-index: 11;
+      font-size: 16px;
+      text-align: left;
+      font-weight: bold;
+      padding: 20px;
+      top: 50%;
+      line-height: 25px;
+      margin-top: -66px;
+      margin-left: auto;
+      margin-right: auto;
+
+      p {
+        color: #fff;
+        margin: 0;
+        padding-left: 10px;
+      }
+    }
+  }
+}

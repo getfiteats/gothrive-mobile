@@ -1,0 +1,18 @@
+<ion-view class="filters-page">
+	<ion-nav-title>
+		<h1 class="title nav-text">Dish Info</h1>
+	</ion-nav-title>
+	<ion-nav-back-button class="button-clear">
+        <i class="gt-icon-back-btn"></i>
+    </ion-nav-back-button>
+	<ion-content class="has-header content" scrollbar-y="false">
+		<ion-nav-buttons side="right">
+			<a ng-click="$ionicGoBack()" class="button button-icon done-btn">
+				Done
+			</a>
+		</ion-nav-buttons>
+	   	<ul class="filter-list">
+	   		<li ng-repeat="tag in tags"><i class="gt-icon-{{tag.icon}}"></i>{{tag.name}}</li>
+	   	</ul>
+	</ion-content>
+</ion-view>

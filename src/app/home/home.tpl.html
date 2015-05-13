@@ -1,0 +1,42 @@
+<ion-view class="home-page" hide-back-button="true">
+    <ion-nav-title>
+        <h1 class="title nav-text">Today {{getMonth()}}/{{getDate()}}</h1>
+    </ion-nav-title>
+    <ion-nav-buttons side="left">
+        <a class="button button-icon" ui-sref="profile"><i class="gt-icon-profile"></i></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a ui-sref="bag" id="bag" class="button button-icon" pseudo-class-selector="'#bag'" pseudo-class="{after: bag.getNumItems() || ''}">
+            <i class="gt-icon-bag" ng-class="{active: bag.getNumItems()}"></i>
+        </a>
+    </ion-nav-buttons>
+    <ion-content class="has-header content" scrollbar-y="false">
+    	<div class="sub-header-container">
+            <h1 class="sub-header">{{headerText}}</h1>
+    	</div>
+        <ion-list>
+
+            <a ui-sref="dish({'dish': dish})" ng-repeat="dish in dishes">
+                <div ng-include="'dish/dish-card.tpl.html'"></div>
+            </a>
+
+          <div class="list card dish-card err-card ng-cloak" ng-show="errMsg">
+            <div class="overlay"></div>
+            <div class="err-msg">
+              <p ng-bind-html="errMsg"></p>
+            </div>
+            <div class="item item-image">
+              <img class="full-image" src="{{'https://res.cloudinary.com/getfiteats/image/upload/v1430422709/jx2dzyjt1j90uirneme7.jpg'|cloudinaryCrop: 'c_fit':'640':''}}">
+            </div>
+           </div>
+
+
+        </ion-list>
+    </ion-content>
+    <div ui-sref="location({hideBackButton: false})" id="delivery-address-bar">
+        <p class="delivery-title">Deliver To</p>
+        <div class="row row-center no-padding">
+            <i class="ion ion-navigate"></i><p class='col-90 address'>{{address}} {{unit}}</p>
+        </div>
+    </div>
+</ion-view>

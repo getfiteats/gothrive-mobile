@@ -1,0 +1,195 @@
+body {
+	font-family: @font-family-proxima-nova-regular
+}
+
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
+	background-color: #fff;
+}
+.no-flick {
+    -webkit-backface-visibility: hidden;
+	-webkit-transform:translate3d(0,0,0);
+	-webkit-transform-style: preserve-3d;
+}
+
+h3 {
+	color: @dark-text;
+	font-family: @font-family-proxima-nova-regular;
+}
+
+.no-border {
+	border: none;
+}
+
+.no-padding {
+	padding: 0px;
+}
+
+.no-padding-top {
+	padding-top: 0px;
+}
+
+.margin-top-none {
+	margin-top: 0px !important;
+}
+
+.nav-text {
+	font-size: 1.2em;
+	color: @dark-text;
+	font-family: @font-family-bryant-medium;
+
+	.home & {
+		color: @thrive-orange;
+	}
+}
+
+.bar-header {
+	border-bottom: 1px solid @app-stroke;
+
+	i:before {
+		vertical-align: middle;
+	}
+}
+
+.sub-header {
+	color: @light-text;
+	font-family: @font-family-proxima-nova-regular;
+	text-align: center;
+	line-height: 44px;
+	margin-bottom: 0px;
+	background: #fff;
+	font-size: 1.2em;
+}
+
+.meta {
+	color: @dark-text;
+	font-family: @font-family-proxima-nova-regular;
+}
+
+.bar.bar-stable {
+	background: #fff;
+	background-image: transparent;
+	border: none;
+	border-bottom: 2px solid @app-stroke;
+}
+
+.content {
+	background: @app-background;
+}
+
+.card {
+	.box-shadow(none);
+	border: 2px solid @app-stroke;
+}
+
+.thrive-btn {
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	background: @app-accent;
+	width: 100%;
+	padding: 20px;
+	font-family: @font-family-proxima-nova-semibold;
+	&.inactive {
+		background: @inactive;
+	}
+	&.active {
+		background: @thrive-orange;
+	}
+	// what color is the logout button? --------------------------
+}
+
+.page-btn {
+	position: fixed;
+	bottom: 0;
+	z-index: 999;
+}
+
+.avatar {
+	.rounded(50px);
+	max-width: 60px;
+}
+
+.gt-icon-back-btn {
+	color: @thrive-orange;
+}
+
+.ion-android-car.active, .gt-icon-bag.active, .gt-icon-settings {
+	color: @thrive-orange;
+}
+
+.gt-icon-x {
+	color: @thrive-orange;
+}
+
+#bag:after {
+  top: 3px;
+  text-align: center;
+  font-size: 10px;
+  color: #fff;
+}
+
+.ion-android-car {
+	margin: 0em;
+
+	&:before {
+		vertical-align: middle;
+	}
+}
+
+.blank-btn {
+	border: none;
+	background: none;
+}
+
+[class^="gt-icon-"]:before, [class*=" gt-icon-"]:before  {
+	
+	.bar-header & {
+		font-size: 1.52em;
+	}
+
+	.gt-icon-walk& {
+		margin: 0em;
+	}
+}
+
+#login-btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+  text-align: right;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.button-positive {
+	background-color: @thrive-orange !important;
+	border-color: #D64100 !important;
+}
+.sub-header-extra {
+	@media only screen and (max-device-width: 320px){
+		display: none;
+	}
+}

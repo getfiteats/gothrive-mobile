@@ -1,0 +1,26 @@
+<ion-modal-view class="checkout-page">
+    <ion-header-bar>
+        <h1 class="title nav-text">Saved Cards</h1>
+    </ion-header-bar>
+    <ion-content class="has-header content" scrollbar-y="false">
+        <div class="saved-card" ng-repeat="card in cards" ng-include="'checkout/savedCard.tpl.html'"
+            ng-init="data={card:card,buttonText:'Select',clickAction:'selectCard'}"></div>
+        
+        <div class="list">
+          <div ng-click="addNewCard()" class="item item-button-right">
+            Add Card
+            <button class="button blank-btn">
+              <i class="icon ion-card"></i>
+            </button>
+          </div>
+          <div ng-click="closeModal()" class="item item-button-right">
+            Back
+            <button class="button blank-btn">
+              <i class="icon gt-icon-back-btn"></i>
+            </button>
+          </div>
+        </div>
+
+    </ion-content>
+</ion-modal-view>
+

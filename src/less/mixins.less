@@ -1,0 +1,36 @@
+.image-2x(@image, @width, @height, @repeat: no-repeat) {
+  @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
+  @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
+  background-image: ~`"url(@{filename}.@{extension})"`;
+  background-repeat: @repeat;
+  
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      /* on retina, use image that's scaled by 2 */
+      background-image: ~`"url(@{filename}@2x.@{extension})"`;
+      background-size: @width @height;
+  }
+}
+
+.placeholder-color(@color) {
+  &::-webkit-input-placeholder {
+   color: @color;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: @color;  
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: @color;
+  }
+
+  &:-ms-input-placeholder {  
+     color: @color;  
+  }
+}

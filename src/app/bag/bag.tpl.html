@@ -1,0 +1,39 @@
+<ion-view class="bag-page">
+    <ion-nav-title>
+        <h1 class="title nav-text">Your Bag</h1>
+    </ion-nav-title>
+    <ion-nav-back-button class="button-clear">
+        <i class="gt-icon-back-btn"></i>
+    </ion-nav-back-button>
+    <ion-content class="has-header content" scrollbar-y="false">
+        <div class="common order">
+            <p class='no-items-in-bag ng-cloak' ng-show="!bag.getNumItems()">You have no items in your bag.</p>
+            <span ng-show="bag.getNumItems()">
+                <div class="heading">Order Summary</div>
+                <ul>
+                    <li class="meal" ng-repeat="mealReference in bag.getItems()">
+                        <a ui-sref="dish({'dish': mealReference.meal})" ng-click="onDishClick($event, mealReference)" >
+                            <div ng-include="'dish/row.tpl.html'"></div>
+                        </a>
+                        <div class="dish-price">{{mealReference.meal.expertPrice*mealReference.quantity|currency}}</div>
+                    </li>
+                </ul>
+                <div class='price-container row'>
+                    <span class="col-25">Subtotal</span>
+                    <span class="price col-25">{{costBreakdown.subTotal|currency}}</span>
+                </div>
+                <div class='price-container row'>
+                    <span class="col-25">Tax + Tip</span>
+                    <span class="price col-25">{{(costBreakdown.tip+costBreakdown.tax)|currency}}</span>
+                </div>
+                <div class='total-container row'>
+                    <span class="col-25">Total</span>
+                    <span class="total col-25">{{costBreakdown.total|currency}}</span>
+                </div>
+            </span>
+        </div>
+        <a ng-show="bag.getNumItems()" ui-sref="checkout" id="continue-btn" class="thrive-btn active ng-cloak">
+            Checkout
+        </a>
+    </ion-content>
+</ion-view>

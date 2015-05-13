@@ -1,0 +1,20 @@
+<ion-view class="dish-page">
+	<ion-nav-title>
+		<h1 class="title nav-text">Dish Info</h1>
+	</ion-nav-title>
+	<ion-nav-back-button class="button-clear">
+        <i class="gt-icon-back-btn"></i>
+    </ion-nav-back-button>
+	<ion-nav-buttons side="right">
+		<a ui-sref="bag" id="bag" class="button button-icon" pseudo-class-selector="'#bag'" pseudo-class="{after: bag.getNumItems() || ''}">
+			<i class="gt-icon-bag" ng-class="{active: bag.getNumItems()}"></i>
+		</a>
+	</ion-nav-buttons>
+	<ion-content class="has-header content" scrollbar-y="false">
+	   	<div ng-include="'dish/dish-card.tpl.html'" ng-init="detailView=true"></div>
+	</ion-content>
+   	<button ng-click="addToBag(dish)" id="add-to-bag" class="thrive-btn active" ng-class="{added:quantityAdded}">
+   		Add To Bag<br />
+		<span class="ng-cloak" ng-show="quantityAdded" id="added-to-bag-message">({{quantityAdded}} already added)</span>
+   	</button>
+</ion-view>

@@ -1,0 +1,122 @@
+.checkout-page {
+
+	h3 {
+		text-align: center;
+		margin: 10px;
+	}
+
+	text-align: center;
+	
+	#address-form {
+		input.err-blur.ng-invalid {
+			color: #ff0000;
+			.placeholder-color(#ff0000);
+		}
+		.item-input {
+			height: 40px;
+		}
+	}
+
+	#payment-form, #address-form, .saved-card {
+		padding: 15px;
+		text-align: center;
+		
+		input {
+			text-align: center;
+			line-height: 34px;
+		}
+		
+		.item-input {
+			height: 40px;
+		}
+
+		.ion-card {
+			font-size: 18px;
+		}
+
+		.err-invalid {
+			color: #ff0000;
+		}
+	}
+	
+	.saved-card-action-btn {
+		font-size: 12px;
+		min-height: 30px;
+		height: 30px;
+		line-height: 30px;
+		margin-top: 20px;
+	}
+
+	.saved-card {
+		input {
+			text-align: left;
+			padding-left: 20px;
+		}
+
+		.saved-card-number {
+			text-align: left;
+			padding-left: 20px;
+		}
+		
+		.saved-card-brand {
+			padding: 0 0 0 20px;
+		}
+
+		.saved-card-expiration {
+			border-left: 1px solid @app-stroke;
+		}
+		
+		.item-input {
+			height: 40px;
+		}
+
+		p {
+			padding: 7px 0;
+			margin-bottom: 0px;
+		}
+	}
+
+	#address-form {
+		#special-instructions {
+			padding: 8px;
+			text-align: left;
+		}
+	}
+
+	#place-order {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 999;
+	}
+
+	#saved-cards-back {
+	  margin-left: 36px;
+	  text-align: center;
+	  width: 80%;
+	  padding: 0px;
+	}
+
+	.list {
+		text-align: left;
+	}
+
+	input, p {
+		font-family: @font-family-proxima-nova-regular;
+	}
+
+	#street-address {
+		padding: 2px;
+		height: 34px;
+		line-height: 34px;
+		text-align: left;
+	}
+
+	#phone {
+		border-left: 1px solid @app-stroke;
+	}
+
+	#expiration {
+		border-left: 1px solid @app-stroke;
+	}
+}

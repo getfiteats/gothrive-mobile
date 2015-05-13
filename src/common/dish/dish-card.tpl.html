@@ -1,0 +1,48 @@
+<div class="list card dish-card" ng-class="{detail: detailView}">
+    <div class="item item-image">
+      <img class="full-image" src="{{dish.image.url|cloudinaryCrop: 'c_fit':'640':''}}">
+    </div>
+
+    <div class="meta">
+      <div class="item item-body row">
+        <h2 class="label dish-title col-100">{{dish.name}}</h2>
+      </div>
+      <div class="item item-body row location ng-cloak">
+        <p class="label col-75">{{dish.brand.name}}</p>
+        <div class="price col-25 right">{{dish.expertPrice|currency}}</div>
+        <!--div class="col-25 right"><span class="time">45{{dish.distance}}min</span> <i class="ion-android-car"></i></div-->
+      </div>
+    </div>
+    <!--div class="common" ng-include="'dish/location.tpl.html'" ng-init="brand = dish.brand" ng-if="detailView"></div-->
+    <ul class="common nutrition-tags row row-wrap ng-cloak"  ng-if="!detailView">
+      <li ng-repeat="reference in dish.nutritionTagReferences | filterBy: 'active':true:'nutritionTag' | limitTo: 2"><i class="gt-icon-{{reference.nutritionTag.name.replace(' ', '-')}}"></i>{{reference.nutritionTag.name}} <span class="ng-cloak" ng-show="$last && $index == 1 && dish.nutritionTagReferences.length > 2">...</span></li>
+    </ul>
+
+    <div class="heading ng-cloak" id="trainer-quote-heading"  ng-if="detailView">Expert Insight</div>
+    <p class="trainer-quote ng-cloak" ng-show="!detailView">"{{dish.trainerReference.quote|snippet:83}}"</p>
+    <div class="item trainer-quote row-center ng-cloak" ng-if="detailView">
+      <p>"{{dish.trainerReference.quote}}"</p>
+    </div>
+    <div class="item trainer-info row row-center">
+      <div class="avatar-container">
+        <img class="avatar" src="{{dish.trainerReference.trainer.image.url|cloudinaryCrop: 'c_thumb,g_face':'90':'90'}}">
+      </div>
+
+      <div class="col-90">
+        <p>{{dish.trainerReference.trainer.first}} {{dish.trainerReference.trainer.last}}, {{dish.trainerReference.trainer.summary}}</p>
+      </div>
+    </div>
+
+    <div class="heading ng-cloak" id="nutrition-tags-heading"  ng-if="detailView">Nutrition Tags</div>
+    <ul class="common nutrition-tags row row-wrap ng-cloak"  ng-if="detailView">
+      <li class="col-33" ng-repeat="reference in dish.nutritionTagReferences | filterBy: 'active':true:'nutritionTag'"><i class="gt-icon-{{reference.nutritionTag.name.replace(' ', '-')}}"></i>{{reference.nutritionTag.name}}</li>
+    </ul>
+    <div class="heading ng-cloak" id="ingredients-heading"  ng-if="detailView">Ingredients</div>
+
+    <ul class="ingredients row row-wrap ng-cloak" ng-if="detailView">
+      <li class="col-50" ng-repeat="ingredient in dish.ingredients">{{ingredient}}</li>
+    </ul>
+</div>
+
+
+<div class="dish-seperator ng-cloak" ng-show="{{!$parent.$last && !detailView}}"></div>

@@ -1,0 +1,42 @@
+<ion-view class="order-page" hide-back-button="true">
+	<ion-nav-title>
+		<h1 class="title nav-text">Thanks for your Order!</h1>
+	</ion-nav-title>
+	<ion-nav-buttons side="right">
+		<button ui-sref="home" class="button button-icon">
+			<i class="gt-icon-x">X</i>
+		</button>
+	</ion-nav-buttons>
+	<ion-content class="has-header content" scrollbar-y="false">
+		<div ng-show="sandBoxError" class="sandbox-error bar bar-header bar-assertive ng-cloak">
+		  <h1 class="title">Your card was not charged, this is a test.</h1>
+		</div>
+		<div class="common order">
+    		<div class="heading">Order Summary</div>
+	    	<ul>
+	    		<li class="meal" ng-repeat="mealReference in order.mealReferences">
+	    			<a ui-sref="dish({'dish': mealReference.meal})">
+        	       		<div ng-include="'dish/row.tpl.html'"></div>
+        	       	</a>
+        	       	<div class="dish-price">{{mealReference.meal.expertPrice|currency}}</div>
+	    		</li>
+	    	</ul>
+	    	<div class='price-container row'>
+	    		<span class="col-25">Subtotal</span>
+	    		<span class="price col-25">{{order.cost.subTotal|currency}}</span>
+	    	</div>
+	    	<div class='price-container row'>
+	    		<span class="col-25">Tip</span>
+	    		<span class="price col-25">{{order.cost.tip|currency}}</span>
+	    	</div>
+	    	<div class='price-container row'>
+	    		<span class="col-25">Tax</span>
+	    		<span class="price col-25">{{order.cost.tax|currency}}</span>
+	    	</div>
+	    	<div class='total-container row'>
+	    		<span class="col-25">Total</span>
+	    		<span class="total col-25">{{order.cost.total|currency}}</span>
+	    	</div>
+	    </div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view class="location-page" nav-transition="none" hide-back-button="hideBackButton">
+
+  <ion-nav-title>
+      <h1 class="title nav-text">Location</h1>
+  </ion-nav-title>
+  <ion-nav-back-button class="button-clear">
+  </ion-nav-back-button>
+  <ion-content>
+
+    <h3>Delivery address</h3>
+    <form id="location-form">
+
+      <div class="row item item-input">
+       <input type="text" placeholder="Where do you want your food delivered?" g-places-autocomplete ng-model="location.place"/>
+      </div>
+
+      <div class="ng-cloak" id="last-place" ng-if="lastPlace">
+        <p>Use last delivery address<p>
+        <a href="#" ng-click="useLastPlace()">{{lastPlace.address.formatted}}</a>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

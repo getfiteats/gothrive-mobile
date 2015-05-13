@@ -1,0 +1,134 @@
+.common {
+	.location {
+
+		&.detail {
+			background: @app-accent;
+			
+			.address {
+				padding: 20px;
+				border-right: 2px solid @app-stroke;
+				
+			}
+
+			.time-box {
+				text-align: center;
+			}
+
+			.time {
+				color: @thrive-orange;
+				display: block;
+				font-size: .95em;
+			}
+
+			.meta {
+				padding: 12px 12px;
+				width: 100%;
+			}
+		}
+	}
+
+	&.order {
+		background: #fdfdfd;	
+		padding: 20px;
+		width: 90%;
+  		margin: 20px auto 0 auto;
+		border: 1px solid @app-stroke;
+
+		.heading {
+			font-family: @font-family-proxima-nova-semibold;
+			color: @dark-text;
+			font-size: 1.2em;
+			margin: 10px 0;
+		}
+
+		.heading2 {
+			color: @light-text;
+			font-size: 16px;
+			font-family: @font-family-proxima-nova-regular;
+		}
+
+		.meal {
+			&:first-child {
+				border-top: 1px solid @app-stroke;
+			}
+			border-bottom: 1px solid @app-stroke;
+		}
+
+		.quantity {
+			color: @thrive-orange;
+		}
+
+		.dish-price {
+			text-align: right;
+			font-size: 14px;
+			padding-right: 5px;
+		}
+
+		.times {
+			padding: 0px;
+			margin: 10px 0;
+			border: none;
+
+			.time-btn {
+				background: @app-accent;
+				border: none;
+				padding: 12px;
+				color: @thrive-orange;
+				font-size: .9em;
+				font-family: @font-family-proxima-nova-semibold;
+				height: 46px;
+				&.active {
+					background: @thrive-orange;
+					color: #fff;
+				}
+			}
+		}
+
+		.price-container, .total-container {
+			text-align: right;
+			color: @light-text;
+			.justify-content(flex-end);
+
+			.price {
+				color: @light-text;
+				font-size: 15px;
+				padding-left: 5px;
+			}
+
+			.total {
+				padding-left: 5px;
+				color: @dark-text;
+				//font-size: 18px;
+			}
+		}
+
+		.total-container {
+			color: @dark-text;
+		}
+
+		.dish-row {
+			padding-bottom: 0px;
+		}
+	}
+
+	&.nutrition-tags {
+		list-style: none;
+		width: 90%;
+		margin: 5px auto;
+		.justify-content(flex-start);
+
+		li {
+			font-size: 12px;
+			color: @light-text;
+			padding: 1px 4px;
+			
+			.detail& {
+				text-align: left;
+			}
+
+			i {
+				padding-right: 3px;
+			}
+		}
+	}
+}

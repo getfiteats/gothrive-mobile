@@ -1,0 +1,12 @@
+<span class="payment-errors"></span>
+ 
+<div class="row item item-input no-padding-top">
+	<i ng-class="ccClass"></i>	
+  	<input  err-class err-class-scope="forms.paymentForm.cardNumber" err-class-el="#card-number" name="cardNumber" id="card-number" ng-model="cardInfo.number" placeholder="Card Number" type="tel" data-stripe="number" card-number-formatter card-number-validator card-type="cardType.value" />
+</div>
+
+<div class="row item item-input no-padding">
+	<input err-class err-class-scope="forms.paymentForm.cvc" err-class-el="#cvc" name="cvc" id="cvc" class="col-33" ng-model="cardInfo.cvc" placeholder="CVC" type="tel" data-stripe="cvc" card-cvc-formatter minlength="3"/>
+	<input err-class err-class-scope="forms.paymentForm.expiration" err-class-el="#expiration" name="expiration" id="expiration" class="col-67" ng-model="cardInfo.expiration" placeholder="MM/YYYY" type="tel" minlength="9" data-stripe="expiration" card-expiry-formatter card-expiry-validator/>
+	<!--input err-class err-class-scope="forms.paymentForm.zip" err-class-el="#zip" class="col-33" name="zip" id="zip" ng-model="cardInfo.zip" placeholder="Zip" type="tel"  data-stripe="zip" maxlength="5" ng-pattern="/^\d{5}(?:[-\s]\d{4})?$/" /-->
+</div>

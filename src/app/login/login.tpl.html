@@ -1,0 +1,25 @@
+<ion-view class="login-page" hide-nav-bar="{{showHeader}}" hide-back-button="{{showHeader}}">
+  <ion-nav-back-button class="button-clear" ui-sref="checkout({'fromBag': false})">
+  </ion-nav-back-button>
+  <ion-content>
+    <span class="ng-cloak" ng-show="showLogin">
+      <h2>Welcome to GoThrive</h2>
+      <h3>Find dishes approved by fitness experts at local restaurants.</h3>
+      
+      <form ng-submit="signUp()">
+        <div class="row item item-input no-padding margin-top-none">
+          <input id="email" type="text" ng-model="register.email" placeholder="Email" required>
+        </div>  
+        <div class="row item item-input no-padding margin-top-none">
+          <input id="password" type="password" ng-model="register.password" placeholder="Password" required>
+        </div>
+        <input type="submit" value="Sign Up" />
+      </form>
+      
+      <a href="javascript:void(0);" ng-click="facebookLogin()" id="login-btn" class="btn btn-social btn-facebook" type="submit">
+        <i class="fa fa-facebook"></i>
+        Login via Facebook
+      </a>
+    </span>
+  </ion-content>
+</ion-view>

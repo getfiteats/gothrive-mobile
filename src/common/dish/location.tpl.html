@@ -1,0 +1,14 @@
+<div class="item item-body row location detail ng-cloak" ng-if="detailView">
+    <div class="address col-75">
+      <p class="label">{{brand.name}}</p>
+      <p class="label">{{brand.address.street}}</p>
+      <p class="label">{{brand.address.city}}, {{brand.address.state}} {{brand.address.zip}}</p>
+    </div>
+    <div class="col-25 right time-box col-center">
+      <a href="geo:{{brand.geo.coordinates.join(',')}}">
+        <!--i class="ion-android-car active"></i-->
+        <span class="time">{{dish.expertPrice|currency}}</span>
+        <!--span class="time">45{{distance}}min</span-->
+      </a>
+    </div>
+</div>

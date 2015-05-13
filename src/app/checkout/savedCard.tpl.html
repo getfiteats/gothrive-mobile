@@ -1,0 +1,8 @@
+<div class="row item item-input no-padding">
+	<input class="saved-card-brand" type="text" value="{{data.card.brand}}" disabled="disabled" />
+</div>
+<div class="row item no-padding margin-top-none">
+	<p class="saved-card-number col-67">XXXX XXXX XXXX {{data.card.last4}}</p>
+	<p class="col-33 saved-card-expiration">{{data.card.exp_month}}/{{data.card.exp_year}}</p>
+</div>
+<a ng-click="$parent.$eval(data.clickAction)(data.card)" class="button saved-card-action-btn">{{data.buttonText}}</a>

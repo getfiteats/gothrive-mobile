@@ -1,0 +1,14 @@
+<div class="row dish-row">
+  <div class="col-25 dish-col">
+    <img class="order-thumb" src="{{mealReference.meal.image.url|cloudinaryCrop: 'c_fit':'80':''}}">
+  </div>
+  
+  <div class="col-50 dish-title-container dish-col">
+    <div class="dish-title">{{mealReference.meal.name}}</div>
+    <p>{{mealReference.meal.brand.name}}</p> 
+  </div>
+
+  <div class="dish-col col-10">
+    <input end-line ng-blur="$parent.onQuantityChange && $parent.onQuantityChange(mealReference)" type="text" class='quantity' pattern="[0-9]*" ng-model="mealReference.quantity">
+  </div>
+</div>

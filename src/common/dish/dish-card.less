@@ -1,0 +1,185 @@
+.dish-card {
+	
+	border-width: 1px;
+	border-radius: none;
+	
+	.item {
+		border-top-left-radius: 0px !important;
+		border-top-right-radius: 0px !important; 
+	}
+
+	margin: 20px 20px; 
+	
+	a {
+		text-decoration: none;
+	}
+
+	p {
+		color: @dark-text;
+		font-family: @font-family-proxima-nova-regular;
+	}
+
+	p.description {
+		color: @light-text;
+	}
+	
+	.heading {
+		font-size: 16px;
+		text-align: center;
+		color: @dark-text;
+		font-family: @font-family-proxima-nova-semibold;
+		margin: 20px 0;
+
+		.detail& {
+			text-align: left;
+			margin: 20px;
+		}
+	}
+
+	.dish-title {
+		font-family: @font-family-proxima-nova-semibold;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap
+	}
+
+	.label {
+		color: @dark-text;
+		margin: 0px;
+		font-size: 1em;
+	}
+	
+	.ingredients {
+		margin: 0 0 20px 20px;
+
+		li {
+			padding-bottom: 5px;
+		}
+	}
+	
+	.meta {
+		width: 90%;
+		margin: 0 auto;
+
+		.right {
+			text-align: right;
+
+			&.price {
+				font-weight: 17px;
+				font-weight: bold;
+			}
+		}
+
+		.item {
+			margin: 5px 0;
+	
+			&:first-child {
+				margin-top: 15px;
+			}
+			&:last-child {
+				margin-bottom: 10px;
+			}
+		}
+	} 
+
+	.row {
+		border: none;
+		padding: 0px;
+	}
+
+	.trainer-info {
+		width: 90%;
+		margin: 0 auto;
+		padding: 0 0px 10px 0px;
+		
+		.avatar-container {
+			max-height: 30px;
+		}
+
+		.avatar {
+			max-width: 30px;
+			max-height: 30px;
+		}
+
+		.detail& {
+			margin-top: 10px;
+			//border-top: 1px solid #dedede;
+			padding-bottom: 0px;
+			border-bottom: 1px solid @app-stroke !important;
+			padding-bottom: 10px;
+
+		}
+
+		p {
+			text-overflow: initial;
+			padding-left: 9px;
+			white-space: normal;
+			font-size: 12px;
+		}
+	}
+
+	.location {
+		.detail& {
+			border-bottom: 1px solid @app-stroke !important;
+			padding-bottom: 10px;
+		}
+	}
+
+	.ingredients {
+		color: @dark-text;
+		font-family: @font-family-proxima-nova-regular;	
+	}
+
+	.detail {
+	  text-align: right;
+	  padding-right: 24px;
+	  font-size: 16px;
+	}
+	
+	.time {
+		display: inline-block;
+		vertical-align: middle;
+
+	}
+
+	.trainer-quote {
+		text-align: left;
+		border-top: 1px solid @app-stroke;
+		width: 90%;
+		margin: 10px auto;
+  		padding-top: 10px;
+
+  		.detail& {
+  			border-top: none;
+			padding: 0px;
+			p {
+				white-space: normal;
+				text-overflow: initial;
+				overflow: visible;
+			}
+			color: @light-text;
+  		}
+	}
+	
+	.detail& {
+		.item {
+			border: none;
+		}
+		.nutrition-tags {
+			li {
+				color: #000;
+			}
+
+			border-bottom: 1px solid #dcdcdc!important;
+  			padding-bottom: 10px;
+		}
+	}
+
+}
+
+.dish-seperator {
+	border-top: 1px solid @app-stroke;
+	width: 90%;
+	height: 0px;
+	margin: 0 auto;
+}

@@ -1,0 +1,26 @@
+<ion-view class="checkout-page">
+	<ion-nav-title>
+		<h1 class="title nav-text">Checkout</h1>
+	</ion-nav-title>
+	<ion-nav-back-button class="button-clear">
+        <i class="gt-icon-back-btn"></i>
+    </ion-nav-back-button>
+	<ion-content class="has-header content" scrollbar-y="false">
+		<h3>Delivery Address</h3>
+		<form name="forms.addressForm" id="address-form" ng-submit="addNewAddress">
+			<div ng-include="'checkout/address.tpl.html'"></div>
+		</form>
+		<span class="ng-cloak" ng-if="!showAddCardForm">
+			<h3>Enter Card Info</h3>
+			<form name="forms.paymentForm" id="payment-form" ng-submit="addNewCard()">
+				<div ng-include="'checkout/cardInfo.tpl.html'"></div>
+			<a ng-if="cards" ng-click="changePaymentMethod()" class="button saved-card-action-btn ng-cloak">Use Saved Card</a>
+				<br />  
+			</form>
+		</span>
+		<div class="saved-card ng-cloak" ng-include="'checkout/savedCard.tpl.html'" ng-if="savedCardData.card" ng-init="data = savedCardData"></div>
+	</ion-content>
+	<a ng-click="submit()" id="place-order" ng-class="{active: checkoutValid, inactive:!checkoutValid}" class="thrive-btn">
+   		Place Order
+   	</a>
+</ion-view>
